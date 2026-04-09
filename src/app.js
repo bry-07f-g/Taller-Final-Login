@@ -8,10 +8,13 @@ const app = express();
 
 // ✅ CORS para local + Vercel
 app.use(cors({
-  origin: [
+origin: [
     'http://localhost:5173',
-    'https://taller-final-gamma.vercel.app'
-  ]
+    'https://taller-final-gamma.vercel.app' // 👈 QUITA LA "/" AL FINAL
+  ],
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true // 👈 AÑADE ESTO si vas a usar Cookies o Sessions más adelante
 }));
 
 app.use(morgan('dev'));
