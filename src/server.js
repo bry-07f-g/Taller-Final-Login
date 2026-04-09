@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 import app from './app.js';
 
 const { MONGODB_URI } = process.env;
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 3000;
 
 // conexión a MongoDB
 mongoose.connect(MONGODB_URI)
